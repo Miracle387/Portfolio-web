@@ -14,6 +14,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: portfolio-service
+            name: {{ include "portfolio-chart.fullname" . }}
             port:
-              number: 80
+              number: {{ .Values.service.port }}
